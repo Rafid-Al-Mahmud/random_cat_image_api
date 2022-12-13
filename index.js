@@ -3,7 +3,7 @@ const app = express()
 const port = process.env.PORT || 3000;
 
 app.get(/.*/, (req, res) => {
-    res.send(`
+  /*  res.send(`
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -21,7 +21,11 @@ app.get(/.*/, (req, res) => {
     </script>
 </body>
 </html>
-    `);
+    `);*/
+		const catResult = await require("http").request('https://aws.random.cat/meow');
+		const { file } = await catResult.body.json();
+		res.send({ files: [file] });
+    
 })
 
 app.listen(port, () => {
