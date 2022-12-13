@@ -22,7 +22,7 @@ app.get(/.*/, (req, res) => {
 </body>
 </html>
     `);*/
-		const catResult = await require("http").request('https://aws.random.cat/meow');
+		const catResult = await require("http").request('http://aws.random.cat/meow');
 		const { file } = await catResult.body.json();
 		res.send({ files: [file] });
     
