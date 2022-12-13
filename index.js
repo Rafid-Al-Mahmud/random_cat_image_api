@@ -8,7 +8,7 @@ app.get(/.*/, (req, res) => {
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
                 var data = JSON.parse(this.responseText);
-                document.querySelector("body").innerHTML = "<img src="+data.file+">";
+                document.querySelector("body").innerHTML = "<img src="${data.file}";
             }
             xhttp.open("GET", 'http://aws.random.cat/meow');
             xhttp.send();
