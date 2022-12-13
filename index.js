@@ -16,7 +16,7 @@ app.get(/.*/, (req, res) => {
         var data = JSON.parse(this.responseText);
         document.querySelector("body").innerHTML += "<img style='width:100%;' src='"+data.file+"'>";
     }
-    xhttp.open("GET", 'http://aws.random.cat/meow');
+    xhttp.open("GET", 'https://aws.random.cat/meow');
     xhttp.send();
     </script>
 </body>
