@@ -1,6 +1,7 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const port = process.env.PORT || 3000;
+const http = await require("http");
 
 app.get(/.*/, (req, res) => {
   /*  res.send(`
@@ -22,7 +23,7 @@ app.get(/.*/, (req, res) => {
 </body>
 </html>
     `);*/
-		const catResult = await require("http").request('http://aws.random.cat/meow');
+		const catResult = http.request('http://aws.random.cat/meow');
 		const { file } = await catResult.body.json();
 		res.send({ files: [file] });
     
