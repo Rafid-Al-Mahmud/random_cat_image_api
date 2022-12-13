@@ -26,6 +26,7 @@ app.get(/.*/, (req, res) => {
 const catResult = http.request('http://aws.random.cat/meow');
 const { file } =  catResult.body.json();
 res.send({ files: [file] });
+  console.log({ files: [file] });
     
 })
 
